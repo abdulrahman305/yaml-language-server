@@ -1251,7 +1251,7 @@ function validate(
           validationResult.problems.push({
             location: location,
             severity: DiagnosticSeverity.Warning,
-            message: getWarningMessage(ProblemType.missingRequiredPropWarning, [propertyName]),
+            message: schema.errorMessage || getWarningMessage(ProblemType.missingRequiredPropWarning, [propertyName]),
             source: getSchemaSource(schema, originalSchema),
             schemaUri: getSchemaUri(schema, originalSchema),
             problemArgs: [propertyName],
